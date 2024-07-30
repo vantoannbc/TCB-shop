@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden; 
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        #content {
+            flex: 1;
+            overflow-y: auto; 
+            padding-right: 15px; 
+        }
+        .container {
+            padding-right: 15px; 
+        }
+        .img-responsive {
+            width: 100%;
+            height: auto;
+        }
+        .media-object {
+            border-radius: 50%;
+        }
+        .thumbnail {
+            border: none;
+            border-radius: 0;
+            margin-bottom: 20px;
+        }
+        .btn-back {
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #f8f9fa;
+            color: #343a40;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">TCB Store</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="account.html">Account</a></li>
+                <li><a href="category.html">Categories</a></li>
+                <li><a href="product.html">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div id="content" class="container">
+        <a href="category.html" class="btn btn-default btn-back">Back to Categories</a>
+        <div class="row">
+            <!-- Product Image -->
+            <div class="col-xs-12 col-md-5">
+                <img src="data:image/jpeg;base64,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" alt="Product Image" class="img-responsive">
+            </div>
+            <!-- Product Details -->
+            <div class="col-xs-12 col-md-7">
+                <h1>Iphone 12</h1>
+                <p><strong>Price:</strong> $799.99</p>
+                <p><strong>Description:</strong> iPhone 12 has a 6.1-inch Super Retina XDR screen, powerful performance with the A14 Bionic chip and high-quality dual cameras, providing a sharp visual experience and excellent processing performance. The design of the iPhone 12 also stands out with its modern boundaries and IP68 waterproof feature.</p>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Reviews -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>Reviews</h3>
+                <div class="media">
+                    <div class="media-left">
+                        <img src="data:image/jpeg;base64,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" alt="Reviewer" class="media-object">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Reviewer Iphone 12</h4>
+                        <p>Users often rate the iPhone 12 very highly in terms of performance and screen quality. They feel the A14 Bionic chip delivers smoothness in every task and the Super Retina XDR display provides sharp and vivid images. However, some reviewers say the battery doesn't last long enough and the price can be steep compared to competitors in the same segment.</p>
+                    </div>
+                </div>
+                <!-- Add more reviews similarly -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="text-center">© 2024 TCB Store</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

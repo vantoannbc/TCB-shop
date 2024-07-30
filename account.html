@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .thumbnail {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: auto;
+        }
+        .btn-sm {
+            margin-top: 5px;
+        }
+        .navbar-fixed-bottom {
+            margin-top: 20px;
+        }
+        .content-section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">TCB Store</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="account.html">Account</a></li>
+                <li><a href="category.html">Categories</a></li>
+                <li><a href="product.html">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div id="content" class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-xs-12 col-md-3">
+                <h3>Account</h3>
+                <div class="list-group">
+                    <a href="#" id="personal-info-link" class="list-group-item">Personal Information</a>
+                    <a href="#" id="payment-info-link" class="list-group-item">Payment Details</a>
+                </div>
+            </div>
+            <!-- Account Information -->
+            <div class="col-xs-12 col-md-9">
+                <div id="personal-info" class="content-section">
+                    <h3>Personal Information</h3>
+                    <div class="thumbnail">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p><strong>Name:</strong> VanToan</p>
+                                <p><strong>Email:</strong> vantoanzzzzz@gmail.com</p>
+                                <p><strong>Phone:</strong> (123) 456-7890</p>
+                                <p><strong>Address:</strong> 123 Nguyen Huu Tho, hcm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="payment-info" class="content-section">
+                    <h3>Payment Details</h3>
+                    <div class="thumbnail">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p><strong>Credit Card:</strong> **** **** **** 1234</p>
+                                <p><strong>Warranty date:</strong> 22/7</p>
+                                <p><strong>Billing Address:</strong> 123 Main Street, Anytown, USA</p>
+                                <button class="btn btn-sm btn-primary">Update Payment Information</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="text-center">© 2024 TCB Store</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#personal-info-link').click(function(event) {
+                event.preventDefault();
+                $('#personal-info').addClass('active');
+                $('#payment-info').removeClass('active');
+            });
+
+            $('#payment-info-link').click(function(event) {
+                event.preventDefault();
+                $('#payment-info').addClass('active');
+                $('#personal-info').removeClass('active');
+            });
+
+            // Show Personal Information by default
+            $('#personal-info').addClass('active');
+        });
+    </script>
+</body>
+</html>
